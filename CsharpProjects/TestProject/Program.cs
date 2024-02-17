@@ -1,22 +1,30 @@
-﻿double pi = 3.14159;
-PrintCircleInfo(12);
-PrintCircleInfo(24);
+﻿ string[,] corporate = 
+	{
+		{"Robert", "Bavin"}, {"Simon", "Bright"},
+		{"Kim", "Sinclair"}, {"Aashrita", "Kamath"},
+		{"Sarah", "Delucchi"}, {"Sinan", "Ali"}};
 
-void PrintCircleArea(int radius)
-{
-    double area = pi * (radius * radius);
-    Console.WriteLine($"Area = {area}");
-}
+	string[,] external = 
+	{
+		{"Vinnie", "Ashton"}, {"Cody", "Dysart"},
+		{"Shay", "Lawrence"}, {"Daren", "Valdes"}
+	};
 
-void PrintCircleCircumference(int radius)
-{
-    double circumference = 2 * pi * radius;
-    Console.WriteLine($"Circumference = {circumference}");
-}
+	string externalDomain = "hayworth.com";
 
-void PrintCircleInfo(int radius) 
-{
-    Console.WriteLine($"Circle with radius {radius}");
-    PrintCircleArea(radius);
-    PrintCircleCircumference(radius);
-}
+	for (int i = 0; i < corporate.GetLength(0); i++) 
+	{
+		DisplayEmail(first: corporate[i,0], last: corporate[i,1]);
+	}
+
+	for (int i = 0; i < external.GetLength(0); i++) 
+	{
+		DisplayEmail(first: external[i,0], last: external[i,1], domain: externalDomain);
+	}
+
+	void DisplayEmail(string first, string last, string domain = "contoso.com") 
+	{
+		string email = first.Substring(0, 2) + last;
+		email = email.ToLower();
+		Console.WriteLine($"{email}@{domain}");
+	}
