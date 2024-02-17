@@ -1,10 +1,7 @@
-﻿string[] students = ["Jenna", "Ayesha", "Carlos", "Victor"];
-DisplayStudents(students);
-DisplayStudents(new string[] {"Robert", "Cap"});
+﻿PrintCircleArea(12);
 
-void DisplayStudents(string[] students){
-foreach(string student in students){
- Console.Write($"{student}, ");
-}
- Console.WriteLine();
+void PrintCircleArea(int radius) {
+    double pi = 3.14159;
+double area = pi * (radius * radius);
+Console.WriteLine($"Area = {area}");
 }
